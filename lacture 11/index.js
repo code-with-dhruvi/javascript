@@ -1,0 +1,43 @@
+let student={
+    name:"dhruvi",
+    number:6354848528,
+    grid:4452,
+    city:"surat",
+    add:{
+        city:"surat",
+        state:"Gujrat",
+        housenumber:502,
+    },
+    skills:["HTML","css","jquare","buttstrap","sass","javascript","tailwind"],
+    frinds:[
+        {name:"html",number:15832862,grid:4452},
+        {name:"css",number:44556378,grid:4453},
+        {name:"js",number:1583269623,grid:4454}
+    ],
+}
+console.log(student);
+console.log(student.name);
+console.log(student.number);
+console.log(student.grid);
+console.log(student.city);
+console.log(student.add);
+console.log(student.add.city);
+console.log(student.add.state);
+console.log(student.add.housenumber);
+console.log(student.skills[0]);
+console.log(student.skills[1]);
+console.log(student.skills[2]);
+console.log(student.skills[3]);
+console.log(student.skills[4]);
+console.log(student.skills[5]);
+console.log(student.skills[6]);
+console.log(student.frinds[0].name);
+console.log(student.frinds[0].number);
+console.log(student.frinds[0].grid);
+console.log(student.frinds[1].name);
+console.log(student.frinds[1].number);
+console.log(student.frinds[1].grid);
+console.log(student.frinds[2].name);
+console.log(student.frinds[2].number);
+console.log(student.frinds[2].grid);
+console.log(student.skills[student.skills.length-1]);
