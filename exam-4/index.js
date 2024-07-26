@@ -49,8 +49,6 @@ const handleData = (e) => {
       course:course
     };
 
-    users.push(user);
-    uimarker();
     if(user.name.length<2){
         alert("name must be laste 2 charecters.")
         return
@@ -59,7 +57,7 @@ const handleData = (e) => {
         alert("grid must be laste 4 number.")
         return
     }
-    else if(user.number.length >=10){
+    else if(user.number.length >10){
         alert("number must be laste 10.")
         return
     }
@@ -67,6 +65,8 @@ const handleData = (e) => {
         alert("please enter your all requied fields Data.")
         return
     }
+    users.push(user);
+    uimarker();
 
 };
 

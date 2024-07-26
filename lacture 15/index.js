@@ -13,17 +13,20 @@ const handleData=(e)=>{
         alert("please enter your name all requied fields")
         return
     }
-    if(user.email == 0){
+    else if(user.email == 0){
         alert("please enter your email")
         return
     }
-    if(user.number.length == 10){
+    else if(user.number.length == 10){
         alert("please enter your number")
         return
     }
-    if(user.passworde.length >6){
+    else if(user.passworde.length >6){
         alert("please enter your passworde")
         return
+    }
+    else{
+        alert("please enter your all requied fields Data")
     }
 
     users.push(user); 
