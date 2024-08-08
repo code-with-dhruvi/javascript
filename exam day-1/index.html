@@ -20,9 +20,22 @@
         <input type="number" name="price" id="price" placeholder="price" class="m-2 p-2" required/><br>
         <label>description:</label>
         <textarea name="description" id="description" placeholder="product description" class="m-2 p-2" required></textarea><br>
-        <button type="submit" id="submit" class="bg-dander m-2 p-2">submit</button>
+        <button type="submit" id="submit" class="bg-primary text-white m-2 p-2">submit</button>
     </form>
+      <table class="table table-hover table-bg-primary">
+        <thead>
+            <tr>
+                <th scope="col">product Name</th>
+                <th scope="col">category</th>
+                <th scope="col">price</th>
+                <th scope="col">description</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
 
+      <script src="./index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
