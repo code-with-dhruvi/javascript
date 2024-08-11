@@ -1,6 +1,6 @@
 let users=[];
 
-const handleDelete=()=>{
+const handleDelete=(index)=>{
     users.splice(index,1);
     uimarker();
 }
