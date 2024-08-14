@@ -1,55 +1,25 @@
-let users=[];
-
-const handaleData=(e)=>{
-    e.preventDefault();
-
-    let name=document.getElementById("name").value;
-    let email=document.getElementById("email").value;
-    let number=document.getElementById("number").value;
-    let password=document.getElementById("password").value;
-
-    let user={
-        name:name,
-        email:email,
-        number:number,
-        password:password
+class student{
+    constructor(name,number,grid,email,course,fee){
+        this.name=name
+        this.number=number
+        this.grid=grid
+        this.email=email
+        this.course=course
+        this.fee=fee
     }
-
-    if(user.name.length<2){
-        alert("please enter your name all requied fields")
-        return
+    leave(name){
+        console.log("you can take leave");
     }
-    else if(user.email == 0){
-        alert("please enter your email")
-        return
-    }
-    let regexnumber=/((\+*)((0[ -]*)*|((91 )*))?[6,7,8,9]((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/
-    let regexpassword=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/
-    document.getElementById('number').addEventListener("input",()=>{
-        let number=document.getElementById("number").value;
-       let regexnumber=/((\+*)((0[ -]*)*|((91 )*))?[6,7,8,9]((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/
-        if(!(regexnumber.test(user.number))){
-            alert("invaild number");
-            document.getElementById("number").style.border="3px solid red"
-        }
-        else{
-            alert("invaild number").style.border="3px solid green"
-        }
-    })
-    document.getElementById('password').addEventListener("input",()=>{
-        let password=document.getElementById("password").value;
-        let regexpassword=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/
-        if(!regexpassword.test(user.password)){
-            alert("invaild password").style.border="3px solid red"
-        }
-        else{
-            document.getElementById("password").style.border="3px solid green"
-        }
-    })
+    exam(){
 
-    users.push(user);
-    console.log(users);
-    document.getElementById("userData").reset();
+    }
 }
-// debugger
-document.getElementById("userData").addEventListener("submit",handaleData);
+
+let stu=new student("dhruvi",6354848476,4452,"dhruvipipaliya41@gmail.com","backend developer",125000)
+let stu1=new student("khushi",625189586,4453,"khushikalsriya42@gmail.com","backend developer",125000)
+
+console.log(stu);
+console.log(stu.name);
+console.log(stu1);
+stu.leave()
+stu.exam()

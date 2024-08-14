@@ -1,25 +1,55 @@
-class student{
-    constructor(name,number,grid,email,course,fee){
+class Account{
+    constructor(name,accnumber){
         this.name=name
-        this.number=number
-        this.grid=grid
-        this.email=email
-        this.course=course
-        this.fee=fee
+        this.accnumber=accnumber
+        this.balance=0
     }
-    leave(name){
-        console.log("you can take leave");
+    deposit(amount){
+        this.balance+=amount
     }
-    exam(){
-
+    withdraw(amount){
+        if(this.balance>=amount){
+            this.balance-=amount
+            console.log("your current balance is",this.balance);
+        }
+        else{
+            console.log("please doposit money");
+        }
+    }
+    checkbalance(){
+        return this.balance
     }
 }
 
-let stu=new student("dhruvi",6354848476,4452,"dhruvipipaliya41@gmail.com","backend developer",125000)
-let stu1=new student("khushi",625189586,4453,"khushikalsriya42@gmail.com","backend developer",125000)
+class salarryAccount extends Account{
+    constructor(name,accnumber){
+        super(name,accnumber)
+        this.creditcard=50000
+    }
+    creditcarddeposit(amount){
+        let usedAmount=50000-this.creditcard
+        if(usedAmount>0&&usedAmount<=amount){
+            this.creditcard+=amount
+            console.log("cuurent limit",this.creditcard);
+        }
+        else{
+            console.log("error");
+        }
+    }
+    creditcardwithdraw(amount){
+        if(this.creditcard>=amount){
+            this.creditcard-=amount
+            return amount
+        }
+    }
+    checkcreditcardbalance(){
+        return this.creditcard
+    }
+}
 
-console.log(stu);
-console.log(stu.name);
-console.log(stu1);
-stu.leave()
-stu.exam()
+let acc=new Account("dhruvi",4662566262)
+acc.deposit(5000)
+acc.withdraw(1000)
+salary.creditcard(100000)
+console.log(salary.checkcreditcardbalance());
+console.log(acc.checkbalance());

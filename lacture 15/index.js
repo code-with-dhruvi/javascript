@@ -1,15 +1,21 @@
 let users=[];
 
-const handleData=(e)=>{
-    e.preventDefault(); 
+const handaleData=(e)=>{
+    e.preventDefault();
+
+    let name=document.getElementById("name").value;
+    let email=document.getElementById("email").value;
+    let number=document.getElementById("number").value;
+    let password=document.getElementById("password").value;
 
     let user={
-        username: document.getElementById("username").value,
-        email: document.getElementById("email").value,
-        number: document.getElementById("number").value,
-        passworde: document.getElementById("passworde").value
-    };
-    if(user.username.length<2){
+        name:name,
+        email:email,
+        number:number,
+        password:password
+    }
+
+    if(user.name.length<2){
         alert("please enter your name all requied fields")
         return
     }
@@ -17,43 +23,33 @@ const handleData=(e)=>{
         alert("please enter your email")
         return
     }
-    else if(user.number.length == 10){
-        alert("please enter your number")
-        return
-    }
-    else if(user.passworde.length >6){
-        alert("please enter your passworde")
-        return
-    }
-    else{
-        alert("please enter your all requied fields Data")
-    }
+    let regexnumber=/((\+*)((0[ -]*)*|((91 )*))?[6,7,8,9]((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/
+    let regexpassword=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/
+    document.getElementById('number').addEventListener("input",()=>{
+        let number=document.getElementById("number").value;
+       let regexnumber=/((\+*)((0[ -]*)*|((91 )*))?[6,7,8,9]((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/
+        if(!(regexnumber.test(user.number))){
+            alert("invaild number");
+            document.getElementById("number").style.border="3px solid red"
+        }
+        else{
+            alert("invaild number").style.border="3px solid green"
+        }
+    })
+    document.getElementById('password').addEventListener("input",()=>{
+        let password=document.getElementById("password").value;
+        let regexpassword=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/
+        if(!regexpassword.test(user.password)){
+            alert("invaild password").style.border="3px solid red"
+        }
+        else{
+            document.getElementById("password").style.border="3px solid green"
+        }
+    })
 
-    users.push(user); 
+    users.push(user);
     console.log(users);
-    uimarker();
     document.getElementById("userData").reset();
-};
-
-const uimarker=()=>{
-    console.log("uimarker called");
-    document.getElementById("tbody").innerHTML="";
-    for(i=0; i<users.length; i++){
-        let tr=document.createAttribute("tr");
-        let td1=document.createAttribute("td");
-        td1.innerHTML=i+1;
-        let td2=document.createAttribute("td");
-        td2.innerHTML=users[i].username;
-        let td3=document.createAttribute("td");
-        td3.innerHTML=users[i].email;
-        let td4=document.createAttribute("td");
-        td4.innerHTML=users[i].number;
-        let td5=document.createAttribute("td");
-        td5.innerHTML=users[i].passworde;
-
-        tr.append(td1,td2,td3,td4,td5)
-        tbody.append(tr)
-    }
-};
-
-document.getElementById("userData").addEventListener("submit",handleData);
+}
+// debugger
+document.getElementById("userData").addEventListener("submit",handaleData);
