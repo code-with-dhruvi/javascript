@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #787591;
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+.counterup{
+    width: 23%;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.counterup h2{
+    text-transform: capitalize;
+}
+/* media query */
+@media (max-width:768px) {
+    .main{
+        flex-direction: column;
+    }
+    .counterup{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
