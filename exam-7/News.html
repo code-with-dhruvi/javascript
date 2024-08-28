@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header style="background-color: black; padding: 10px 20px; text-align: center;">
+        <a href="./index.html">Home</a>
+        <a href="./News.html">add News</a>
+        <a href="./singup.html">sing up</a>
+    </header>
+    <div class="container">
+        <div class="hader">
+            <div class="slidebar">
+                <div class="logo">
+                    <img src="./logo.png" alt="">
+                    <h1>sign up page</h1>
+                </div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <form id="newsdata">
+                <h1>Add News</h1>
+                <label>Name:</label>
+                <input type="name" id="name" placeholder="enter your name" required/><br>
+                <label>Email:</label>
+                <input type="text" id="email" placeholder="enter your email" required/><br>
+                <label>img url:</label>
+                <input type="text" id="img" placeholder="enter img url..." required/><br>
+                <label>Password:</label>
+                <input type="number" id="password" placeholder="enter your password" required/><br>
+                <label>Contry:</label>
+                <select name="" id="contry">
+                    <option value="">USA</option>
+                    <option value="">India</option>
+                    <option value="">UK</option>
+                </select><br>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="./News.js"></script>
+</html>
