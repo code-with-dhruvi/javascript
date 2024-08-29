@@ -16,12 +16,11 @@ const mapper=(news)=>{
     let password=document.createElement("password");
     password.innerHTML=ele.password;
     let contry=document.createElement("h3")
-    contry.innerHTML=ele.contry;
     let btndele=document.createElement("button");
     btndele.innerHTML="Delete";
     btndele.addEventListener("click",()=>handleDelete(index))
     let div=document.createElement("div");
-    div.append(img,name,email,contry,btndele);
+    div.append(img,name,email,btndele);
     document.getElementById("Newslist").append(div);
   });
 };
