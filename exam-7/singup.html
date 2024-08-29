@@ -16,22 +16,37 @@
         <div class="hader">
             <div class="slidebar">
                 <div class="logo">
-                    <img src="./logo.png" alt="">
-                    <h1>sign up page</h1>
+                    <img id="logo-img" src="" alt="">
+                    <h1 id="logo-text"></h1>
                 </div>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">contact</a></li>
-                </ul>
+                <ul id="sidebar-data"></ul>
             </div>
         </div>
         <div class="main-content">
             <h2>sing up form</h2>
+            <lable>Name:</lable>
             <input type="text" id="name" placeholder="enter your name" required/><br>
-            <input type="text" id="img" placeholder="enter your img url.." required/><br>
+            <lable>img-url:</lable>
+            <input type="text" id="img-url" placeholder="enter your img url.." required/><br>
             <button id="submit">Submit</button>
         </div>
     </div>
+      <script>
+        let nameInput=document.getElementById("name");
+        let imgInput=document.getElementById("img-url");
+        let sidebarData=document.getElementById("sidebar-data");
+        let logoImg=document.getElementById("logo-img");
+        let logoText=document.getElementById("logo-text");
+        let submitbtn=document.getElementById("submit");
+
+        submitbtn.addEventListener("click",()=>{
+            let name=nameInput.value;
+            let imgUrl=imgInput.value;
+            logoText.innerHTML=name;
+            logoImg.src=imgUrl;
+            localStorage.setItem("name",name);
+            localStorage.setItem("imgUrl",imgUrl);
+        });
+      </script>
 </body>
 </html>
