@@ -1,6 +1,6 @@
-const getValue=(classname)=>{
+const getValue=(ClassName)=>{
 
-    return document.querySelector(classname).value
+    return document.querySelector(ClassName).value;
 }
 
-export default getValue
+export default getValue;
