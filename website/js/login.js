@@ -17,7 +17,7 @@ const handleData=(e)=>{
         alert("login success")
         localStorage.setItem("username",isMatched[0].username)
         localStorage.setItem("isLogin",true)
-        window.location.href="/website/index.html"
+        window.location.href="/index.html"
     }
     else{
         alert("login failure")

@@ -5,6 +5,29 @@ document.getElementById("navbar").innerHTML=Navbar();
 
 let products=JSON.parse(localStorage.getItem("products")) || [];
 
+let cart=[]
+const isexist=(id)=>{
+    const product=cart.filter((ele)=>ele.id)
+    if(product.length>0){
+        alert("product already exists");
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+const handlecart=(ele)=>{
+    if(isexist(ele.id)){
+
+    }
+    else{
+        cart.push(ele);
+        alert("added cart")
+    }
+    console.log(cart);
+}
+
 const mapper=(data)=>{
     document.getElementById("productlist").innerHTML = "";
     data.map((ele)=>{
@@ -12,12 +35,16 @@ const mapper=(data)=>{
         let price=createTag("p",ele.price)
         let title=createTag("h3",ele.title)
         let category=createTag("p",ele.category)
+        let buybtn=createTag("button","Buy");
+        buybtn.addEventListener("click",()=>handlecart(ele))
         let div=document.createElement("div")
-        div.append(img,title,price,category)
+        div.append(img,title,price,category,buybtn)
         document.getElementById("productlist").append(div)
     });
 };
 mapper(products);
+
+// sorting and filtering
 const handleSort = (orderby)=>{
     if(orderby=="lth"){
         let temp=products.sort((a,b)=>a.price-b.price);
@@ -47,4 +74,4 @@ const search=(e)=>{
     let temp=products.filter((ele)=>ele.title.tolowercase().includes(searchValue.tolowercase()));
     mapper(temp);
 };
-document.getElementById("serching").addEventListener("submit",search);
+document.getElementById("searching").addEventListener("submit",search);
