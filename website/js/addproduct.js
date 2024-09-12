@@ -18,6 +18,7 @@ const handlesubmit=(e)=>{
         price:getValue(".price"),
         category:getValue(".category"),
         img:getValue(".img"),
+        id:Date.now()
     };
     products.push(product);
     localStorage.setItem("products",JSON.stringify(products));

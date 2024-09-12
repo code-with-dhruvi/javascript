@@ -1,9 +1,9 @@
-#productList{
+#productlist{
     display: grid;
     grid-template-columns: repeat(4,1fr);
 }
 
 
-#productList div img {
+#productlist div img {
     width: 200px;
 }

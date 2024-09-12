@@ -5,26 +5,33 @@ document.getElementById("navbar").innerHTML=Navbar();
 
 let products=JSON.parse(localStorage.getItem("products")) || [];
 
-let cart=[]
+let cart=JSON.parse(localStorage.getItem("cart")) || []
 const isexist=(id)=>{
-    const product=cart.filter((ele)=>ele.id)
-    if(product.length>0){
-        alert("product already exists");
-        return true;
-    }
-    else{
-        return false;
-    }
+    // const product=cart.filter((ele)=>ele.id)
+    // if(product.length>0){
+    //     alert("product already exists");
+    //     return true;
+    // }
+    // else{
+    //     return false;
+    // }
+    let flag=false;
+    cart.map((ele,i)=>{
+        if(ele.id==id){
+            cart[i].qty=cart[i].qty+1
+            flag=true;
+            alert("qty added")
+        }
+    })
+    return flag;
 }
 
 const handlecart=(ele)=>{
-    if(isexist(ele.id)){
-
+    if(!isexist(ele.id)){
+        cart.push({...ele,qty:1});
+        alert("add to cart");
     }
-    else{
-        cart.push(ele);
-        alert("added cart")
-    }
+    localStorage.setItem("cart",JSON.stringify(cart))
     console.log(cart);
 }
 
@@ -35,16 +42,15 @@ const mapper=(data)=>{
         let price=createTag("p",ele.price)
         let title=createTag("h3",ele.title)
         let category=createTag("p",ele.category)
-        let buybtn=createTag("button","Buy");
+        let buybtn=createTag("button","buy");
         buybtn.addEventListener("click",()=>handlecart(ele))
         let div=document.createElement("div")
-        div.append(img,title,price,category,buybtn)
-        document.getElementById("productlist").append(div)
+        div.append(img,title,price,category,buybtn);
+        document.getElementById("productlist").append(div);
     });
 };
 mapper(products);
 
-// sorting and filtering
 const handleSort = (orderby)=>{
     if(orderby=="lth"){
         let temp=products.sort((a,b)=>a.price-b.price);
