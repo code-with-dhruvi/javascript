@@ -1,9 +1,20 @@
 #productlist{
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    background-color: blanchedalmond;
+    padding: 10px 20px;
 }
-
-
 #productlist div img {
     width: 200px;
+}
+#productlist div button{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+#productlist div button:hover{
+    background: white;
+    color: black;
 }
