@@ -11,10 +11,9 @@ const handleData = (e) => {
         email: getValue(".email"),
         password: getValue(".password"),
     };
-
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
-
+    localStorage.setItem("isLogin", true);
     window.location.href="/index.html"
 
 };

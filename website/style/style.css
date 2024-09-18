@@ -1,5 +1,5 @@
 .hero-section {
-    background-image: url('http://ravishmag.co.uk/wp-content/uploads/2023/04/Eco-Friendly-Products.jpg');
+    background-image: url('https://info.cosmopak.com/hubfs/cosmopak_secrets_beauty_innovation_turnkey.jpg');
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -16,6 +16,10 @@ a:hover{
 }
 ul li{
     list-style: none;
+}
+.btn:hover{
+    background-color: #fff;
+    color: #000;
 }
 .featured-products {
     padding: 50px;

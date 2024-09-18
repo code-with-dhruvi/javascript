@@ -4,7 +4,7 @@ const Navbar = () => {
   return `
  <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/index.html">Navbar</a>
+          <a class="navbar-brand" href="/index.html">Beauty</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -27,21 +27,21 @@ const Navbar = () => {
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/product.html">product</a>
+                <a class="nav-link active" href="/pages/product.html">product</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/addProduct.html"
+                <a class="nav-link active" href="/pages/addProduct.html"
                   >addProduct</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/cart.html">cart</a>
+                <a class="nav-link active" href="/pages/cart.html">cart</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/login.html">${isLogin ? "Logout" : "Login"}</a>
+                <a class="nav-link active" href="/pages/login.html">${isLogin ? "Logout" : "Login"}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/pages/signup.html">${isLogin ? username : "signup"}</a>
+                <a class="nav-link active" href="/pages/signup.html">${isLogin ? username : "signup"}</a>
               </li>
             </ul>
             <form class="d-flex" role="search" id="searching">

@@ -1,8 +1,7 @@
 import getValue from "../components/helper.js";
 import Navbar from "../components/Navbar.js";
 
-document.getElementById("navbar").innerHTML = Navbar();
-
+document.getElementById("navber").innerHTML=Navbar()
 let users = JSON.parse(localStorage.getItem("users")) || [];
 const handleData = (e) => {
   e.preventDefault();
@@ -24,12 +23,16 @@ const handleData = (e) => {
 
     localStorage.setItem("isLogin", true)
 
-
     window.location.href = "/index.html"
   }
   else {
     alert("login failure")
   }
+const logout = () => {
+  localStorage.removeItem("username");
+  localStorage.removeItem("isLogin");
+  window.location.href = "/login.html";
+};
 };
 
-document.querySelector("#userData").addEventListener("submit", handleData);
+document.getElementById("#userData").addEventListener("submit", handleData);
