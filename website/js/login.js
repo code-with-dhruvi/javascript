@@ -1,7 +1,7 @@
 import getValue from "../components/helper.js";
 import Navbar from "../components/Navbar.js";
 
-document.getElementById("navber").innerHTML=Navbar()
+document.getElementById("navbar").innerHTML = Navbar()
 let users = JSON.parse(localStorage.getItem("users")) || [];
 const handleData = (e) => {
   e.preventDefault();
@@ -17,8 +17,8 @@ const handleData = (e) => {
 
   if (isMatched.length > 0) {
     alert("login success")
-     
-    localStorage.setItem("username",isMatched[0].username)
+
+    localStorage.setItem("username", isMatched[0].username)
 
 
     localStorage.setItem("isLogin", true)
@@ -28,11 +28,6 @@ const handleData = (e) => {
   else {
     alert("login failure")
   }
-const logout = () => {
-  localStorage.removeItem("username");
-  localStorage.removeItem("isLogin");
-  window.location.href = "/login.html";
-};
 };
 
-document.getElementById("#userData").addEventListener("submit", handleData);
+document.getElementById("userData").addEventListener("submit",handleData);

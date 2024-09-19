@@ -5,10 +5,6 @@ document.getElementById("navbar").innerHTML = Navbar();
 
 let products = JSON.parse(localStorage.getItem("products")) || [];
 
-
-
-// cart
-
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 
 const isExist = (id) => {
@@ -100,8 +96,6 @@ document
 document
     .getElementById("electronics")
     .addEventListener("click", () => handleCategory("electronics"));
-
-// searching
 
 const search = (e) => {
     e.preventDefault();
