@@ -61,8 +61,6 @@ const mapper = (data) => {
 
 mapper(products);
 
-// sorting and filtering
-
 const handleSort = (orderBy) => {
     if (orderBy == "lth") {
         let temp = products.sort((a, b) => a.price - b.price);
@@ -107,3 +105,9 @@ const search = (e) => {
 };
 
 document.getElementById("searching").addEventListener("submit", search);
+
+document.getElementById("search").addEventListener("keypress",(e)=>{
+    if(e.key=="Enter"){
+
+    }
+});

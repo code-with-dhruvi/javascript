@@ -21,6 +21,13 @@ const mapper = (data) => {
         let qty = document.createElement("div");
         let btn1 = document.createElement("button");
         btn1.innerHTML = "-";
+        btn1.addEventListener("click", () => {
+          if (cart[i].qty - 1 <= 0) {
+            removecart(i);
+          } else {
+            update(i, -1);
+          }
+        });
         btn1.addEventListener("click", () => update(i, -1));
         let btn2 = document.createElement("button");
         btn2.innerHTML = "+";
