@@ -33,6 +33,22 @@ const mapper = (data) => {
     container.append(img, title, description, price, category, rating, stock)
     document.getElementById("product-list").append(container);
   })
+  const search = (e) => {
+    e.preventDefault();
+
+    let searchValue = getValue("#search");
+    let temp = products.filter((ele) => ele.title.toLowerCase().includes(searchValue.toLowerCase()));
+    mapper(temp);
+
+};
+
+document.getElementById("searching").addEventListener("submit", search);
+
+document.getElementById("search").addEventListener("keypress",(e)=>{
+    if(e.key=="Enter"){
+
+    }
+});
 }
 
 console.log("ending");
